@@ -1,0 +1,131 @@
+# mcp-cli command rules
+# Format: <scope> -> <pattern>
+# Example: execute:cli:safe:gh -> gh repo [view,list]
+
+execute:cli:safe:ls -> ls
+execute:cli:safe:pwd -> pwd
+execute:cli:safe:whoami -> whoami
+execute:cli:safe:id -> id
+execute:cli:safe:uname -> uname
+execute:cli:safe:date -> date
+execute:cli:safe:time -> time
+execute:cli:safe:env -> env
+execute:cli:safe:printenv -> printenv
+execute:cli:safe:which -> which
+execute:cli:safe:type -> type
+execute:cli:safe:command -> command
+execute:cli:safe:stat -> stat
+execute:cli:safe:file -> file
+execute:cli:safe:head -> head
+execute:cli:safe:tail -> tail
+execute:cli:safe:less -> less
+execute:cli:safe:more -> more
+execute:cli:safe:du -> du
+execute:cli:safe:df -> df
+execute:cli:safe:lsblk -> lsblk
+execute:cli:safe:mount -> mount
+execute:cli:safe:ps -> ps
+execute:cli:safe:top -> top
+execute:cli:safe:wc -> wc
+execute:cli:safe:cut -> cut
+execute:cli:safe:sort -> sort
+execute:cli:safe:uniq -> uniq
+execute:cli:safe:tr -> tr
+execute:cli:safe:grep -> grep
+execute:cli:safe:find -> find [!-exec,!-execdir,!-ok,!-okdir,!-delete]
+execute:cli:safe:sed -> sed [!-i,!--in-place,!-i.bak]
+execute:cli:safe:awk -> awk
+execute:cli:safe:rg -> rg
+execute:cli:safe:jar -> jar [t,tf,tvf,--list]
+execute:cli:safe:tar -> tar [-t,-tf,-tvf]
+execute:cli:safe:unzip -> unzip [-l,-Z]
+execute:cli:safe:fd -> fd
+execute:cli:safe:cat -> cat
+execute:cli:safe:basename -> basename
+execute:cli:safe:dirname -> dirname
+execute:cli:safe:realpath -> realpath
+execute:cli:safe:readlink -> readlink
+execute:cli:safe:sha256sum -> sha256sum
+execute:cli:safe:shasum -> shasum
+execute:cli:safe:md5sum -> md5sum
+execute:cli:safe:cksum -> cksum
+execute:cli:safe:diff -> diff
+execute:cli:safe:cmp -> cmp
+execute:cli:safe:comm -> comm
+execute:cli:safe:nl -> nl
+execute:cli:safe:fmt -> fmt
+execute:cli:safe:column -> column
+execute:cli:safe:od -> od
+execute:cli:safe:hexdump -> hexdump
+execute:cli:safe:strings -> strings
+execute:cli:safe:jq -> jq
+execute:cli:safe:yq -> yq
+execute:cli:safe:cd -> cd
+execute:cli:safe:git -> git [status,log,diff,show,rev-parse,ls-files,ls-tree,cat-file,grep,blame]
+execute:cli:safe:gh -> gh repo [view,list]
+execute:cli:safe:gh -> gh issue [view,list]
+execute:cli:safe:gh -> gh pr [view,list]
+execute:cli:safe:gh -> gh release [view,list]
+execute:cli:safe:gh -> gh search [issues,prs,repos,code,commits]
+execute:cli:safe:gh -> gh auth status
+execute:cli:safe:docker -> docker [ps,images,inspect,logs]
+execute:cli:safe:kubectl -> kubectl [get,describe,logs,top,version]
+execute:cli:safe:terraform -> terraform [version,providers,show,plan,graph,output]
+execute:cli:safe:helm -> helm [version,list,show,status,history]
+execute:cli:safe:npm -> npm [list,ls,view,info,search,help]
+execute:cli:safe:yarn -> yarn [list,info,why,config]
+execute:cli:safe:pnpm -> pnpm [list,ls,info,view,why]
+execute:cli:safe:pip -> pip [list,show,check,debug]
+execute:cli:safe:pip3 -> pip3 [list,show,check,debug]
+
+execute:cli:unsafe:xargs -> xargs
+execute:cli:unsafe:rm -> rm
+execute:cli:unsafe:mv -> mv
+execute:cli:unsafe:cp -> cp
+execute:cli:unsafe:mkdir -> mkdir
+execute:cli:unsafe:rmdir -> rmdir
+execute:cli:unsafe:touch -> touch
+execute:cli:unsafe:chmod -> chmod
+execute:cli:unsafe:chown -> chown
+execute:cli:unsafe:ln -> ln
+execute:cli:unsafe:sudo -> sudo
+execute:cli:unsafe:bash -> bash
+execute:cli:unsafe:sh -> sh
+execute:cli:unsafe:zsh -> zsh
+execute:cli:unsafe:fish -> fish
+execute:cli:unsafe:python -> python
+execute:cli:unsafe:python3 -> python3
+execute:cli:unsafe:perl -> perl
+execute:cli:unsafe:ruby -> ruby
+execute:cli:unsafe:node -> node
+execute:cli:unsafe:npm -> npm
+execute:cli:unsafe:yarn -> yarn
+execute:cli:unsafe:pnpm -> pnpm
+execute:cli:unsafe:cargo -> cargo
+execute:cli:unsafe:go -> go
+execute:cli:unsafe:dotnet -> dotnet
+execute:cli:unsafe:mvn -> mvn
+execute:cli:unsafe:mvnw -> mvnw
+execute:cli:unsafe:gradle -> gradle
+execute:cli:unsafe:gradlew -> gradlew
+execute:cli:unsafe:git -> git
+execute:cli:unsafe:gh -> gh
+execute:cli:unsafe:docker -> docker
+execute:cli:unsafe:kubectl -> kubectl
+execute:cli:unsafe:terraform -> terraform
+execute:cli:unsafe:helm -> helm
+execute:cli:unsafe:aws -> aws
+execute:cli:unsafe:gcloud -> gcloud
+execute:cli:unsafe:az -> az
+execute:cli:unsafe:psql -> psql
+execute:cli:unsafe:mysql -> mysql
+execute:cli:unsafe:sqlite3 -> sqlite3
+execute:cli:unsafe:curl -> curl
+execute:cli:unsafe:wget -> wget
+execute:cli:unsafe:ssh -> ssh
+execute:cli:unsafe:scp -> scp
+execute:cli:unsafe:rsync -> rsync
+execute:cli:unsafe:tar -> tar
+execute:cli:unsafe:zip -> zip
+execute:cli:unsafe:unzip -> unzip
+execute:cli:unsafe:make -> make
