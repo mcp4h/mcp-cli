@@ -123,6 +123,7 @@ Safe defaults (read-only commands):
 - `execute:cli:safe:which` -> locate binaries
 - `execute:cli:safe:type` -> shell type lookup
 - `execute:cli:safe:command` -> shell command lookup
+- `execute:cli:safe:test` -> test expression
 - `execute:cli:safe:stat` -> file metadata
 - `execute:cli:safe:file` -> file type detection
 - `execute:cli:safe:head` -> read file head

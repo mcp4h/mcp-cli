@@ -14,6 +14,7 @@ execute:cli:safe:printenv -> printenv
 execute:cli:safe:which -> which
 execute:cli:safe:type -> type
 execute:cli:safe:command -> command
+execute:cli:safe:test -> test
 execute:cli:safe:stat -> stat
 execute:cli:safe:file -> file
 execute:cli:safe:head -> head
