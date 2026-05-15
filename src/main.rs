@@ -317,29 +317,11 @@ fn tool_definition() -> Value {
         "outputSchema": {
             "type": "object",
             "properties": {
-                "structuredContent": {
-                    "type": "object",
-                    "properties": {
-                        "exitCode": { "type": ["integer", "null"] },
-                        "stdout": { "type": "string" },
-                        "stderr": { "type": "string" }
-                    },
-                    "required": ["stdout", "stderr"]
-                },
-                "content": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "type": { "type": "string" },
-                            "text": { "type": "string" }
-                        },
-                        "required": ["type"]
-                    }
-                },
-                "isError": { "type": "boolean" }
+                "exitCode": { "type": ["integer", "null"] },
+                "stdout": { "type": "string" },
+                "stderr": { "type": "string" }
             },
-            "required": ["structuredContent", "content"]
+            "required": ["stdout", "stderr"]
         }
     })
 }
