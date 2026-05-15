@@ -466,7 +466,6 @@ fn build_tool_outcome(
     stdout: String,
     stderr: String,
 ) -> ToolOutcome {
-    let requested_scopes_meta = requested_scopes.clone();
     let safe_count = intents
         .iter()
         .filter(|intent| intent.scope.contains("execute:cli:safe:"))
@@ -479,24 +478,36 @@ fn build_tool_outcome(
         unsafe_count,
         exit_code.map(|code| code.to_string()).unwrap_or_else(|| "unknown".to_string())
     );
+    let content_text = if stdout.is_empty() {
+        stderr.clone()
+    } else if stderr.is_empty() {
+        stdout.clone()
+    } else {
+        format!("{}\n--\n{}", stdout, stderr)
+    };
     let structured = json!({
         "exitCode": exit_code,
         "stdout": stdout,
         "stderr": stderr
     });
+    let meta = if requested_scopes.is_empty() {
+        json!({ "displayMessage": summary })
+    } else {
+        json!({
+            "requested_scopes": requested_scopes,
+            "displayMessage": summary
+        })
+    };
     ToolOutcome {
         value: json!({
             "structuredContent": structured,
             "content": [{
                 "type": "text",
-                "text": summary
-            }]
+                "text": content_text
+            }],
+            "_meta": meta
         }),
-        meta: if requested_scopes_meta.is_empty() {
-            None
-        } else {
-            Some(json!({ "requested_scopes": requested_scopes_meta }))
-        },
+        meta: None,
     }
 }
 
